@@ -1,11 +1,11 @@
 public class Sled {
-    // Instance variables
+    //// Instance variables ////
     private String name;
     private String material;
     private String color;
 
-    // Constructors
 
+    //// Constructors ////
     public Sled() {
         name = "Sled";
         material = "plastic";
@@ -18,8 +18,8 @@ public class Sled {
         this.color = color;
     }
 
-    // Getters
 
+    //// Getters ////
     public String getName() {
         return name;
     }
@@ -32,8 +32,8 @@ public class Sled {
         return color;
     }
 
-    // Setters
 
+    //// Setters ////
     public void setName(String name) {
         this.name = name;
     }
@@ -46,16 +46,32 @@ public class Sled {
         this.color = color;
     }
 
-    // Other methods
-    // TODO: add more methods
 
+    //// Other methods ////
     public String getInfo() {
-        return ("This sled is named \"" + name + ".\" It is made of " + material + " and is "
-                + color + ".");
+        String className = this.getClass().getSimpleName();
+        // Use switch for this occasion since we're checking the same thing over and over again
+        // Clarifies what kind of sled is being referred to
+        switch (className) {
+            case "CircularSled":
+                className = "circular sled";
+                break;
+            case "RectangularSled":
+                className = "rectangular sled";
+                break;
+            case "Toboggan":
+                className = "toboggan";
+                break;
+            default:
+                className = "sled";
+        }
+        return ("This " + className + " is named \"" + name + ".\" It is made of " + material
+                + " and is " + color + ".");
     }
 
     public String getRawInfo() {
-        return (name + ", " + material + ", " + color);
+        String className = this.getClass().getSimpleName();
+        return (className + ", " + name + ", " + material + ", " + color);
     }
 
 }
