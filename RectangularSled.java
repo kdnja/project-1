@@ -1,60 +1,73 @@
-public class RectangularSled {
+public class RectangularSled extends Sled {
     // Instance variables
-
-    private String name;
-    private double height;
-    private double weight;
-    private boolean hasHandles;
-
-    // New instance variables
     private double length;
     private double width;
-    private boolean isCurved;
-    private String material;
-    private String color;
+    private double height;
+    private double weight;
 
     // Constructors
 
     public RectangularSled() {
-        this.name = "Rectangular Sled";
-        this.length = 47.0;
-        this.width = 18.85;
-        this.height = 5.4;
-        this.isCurved = false;
-        this.hasHandles = false;
-        this.material = "plastic";
-        this.color = "blue";
+        super("Default rectangular sled", "plastic", "blue");
+        length = 47.0;
+        width = 18.85;
+        height = 5.4;
+        weight = 3.0;
     }
 
-    public RectangularSled(String name, double length, double width, double height, double weight,
-            boolean isCurved, boolean hasHandles, String material, String color) {
-        this.name = name;
+    public RectangularSled(String name, String material, String color, double length, double width,
+            double height, double weight) {
+        super(name, material, color);
         this.length = length;
         this.width = width;
         this.height = height;
         this.weight = weight;
-        this.isCurved = isCurved;
-        this.hasHandles = hasHandles;
-        this.material = material;
-        this.color = color;
     }
 
     // Getters
 
+    public double getLength() {
+        return length;
+    }
+
     public double getWidth() {
-        return this.width;
+        return width;
     }
 
     public double getHeight() {
-        return this.height;
+        return height;
     }
 
-    public boolean getIsCurved() {
-        return this.isCurved;
+    public double getWeight() {
+        return weight;
     }
 
-    public boolean getHandles() {
-        return this.hasHandles;
+    // Setters
+
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    // Other methods
+    // TODO: add other methods
+
+    @Override
+    public String getInfo() {
+        // TODO Auto-generated method stub
+        return super.getInfo() + " The dimensions of the sled are " + length + " x " + width + " x "
+                + height + " inches, and it weighs " + weight + " pounds.";
     }
 
 }
