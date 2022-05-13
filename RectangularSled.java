@@ -65,9 +65,12 @@ public class RectangularSled extends Sled {
 
     @Override
     public String getInfo() {
-        // TODO Auto-generated method stub
         return super.getInfo() + " The dimensions of the sled are " + length + " x " + width + " x "
                 + height + " inches, and it weighs " + weight + " pounds.";
     }
 
+    @Override
+    public String getRawInfo() {
+        return (super.getRawInfo() + ", " + length + ", " + width + ", " + height + ", " + weight);
+    }
 }

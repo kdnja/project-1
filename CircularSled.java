@@ -55,9 +55,13 @@ public class CircularSled extends Sled {
 
     @Override
     public String getInfo() {
-        // TODO Auto-generated method stub
         return (super.getInfo() + " The sled is circular, so it has a radius of " + radius
                 + " inches. It has a height of " + height + " inches and weighs " + weight
                 + " pounds.");
+    }
+
+    @Override
+    public String getRawInfo() {
+        return (super.getRawInfo() + ", " + radius + ", " + height + ", " + weight);
     }
 }
